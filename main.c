@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 // Dizide arama yapan fonksiyon
-int linear_search(int dizi[], int n, int aranan) {
+int linear_search(int dizi[], int n, int search) {
     for (int i = 0; i < n; i++) {
-        if (dizi[i] == aranan) {
+        if (dizi[i] == search) {
             return i;
         }
     }
@@ -11,27 +11,27 @@ int linear_search(int dizi[], int n, int aranan) {
 }
 
 int main() {
-    int n, aranan;
+    int x, search;
 
-    // Dizinin boyutunu ve elemanlarını kullanıcıdan isteyiniz
-    printf("Dizinin boyutunu girin: ");
-    scanf("%d", &n);
-    int dizi[n];
-    for (int i = 0; i < n; i++) {
-        printf("Dizinin %d. elemanını girin: ", i+1);
+    // Dizinin boyutunu ve elemanlarini kullanicidan istiyoruz
+    printf("Dizi Kac Boyutlu Olacak ?: ");
+    scanf("%d", &x);
+    int dizi[x];
+    for (int i = 0; i < x; i++) {
+        printf("Dizinin %d. elamanini giriniz: ", i+1);
         scanf("%d", &dizi[i]);
     }
 
-    // Dizide aranacak olan elemanı kullanıcıdan isteyiniz
-    printf("Aranacak elemanı girin: ");
-    scanf("%d", &aranan);
+    // Dizide aranacak olan elemani kullanicidan al
+    printf("Aranacak elemani girin: ");
+    scanf("%d", &search);
 
-    // Aranılan elemanın dizide olup olmadığının kontrolünü yapın
-    int sonuc = linear_search(dizi, n, aranan);
+    // Aranan elemanin dizide olup olmadigini kontrol et
+    int sonuc = linear_search(dizi, x, search);
     if (sonuc != -1) {
-        printf("Aranan eleman dizide %d. sırada bulundu.\n", sonuc+1);
+        printf("Aranan eleman dizide %d. sirada bulundu.\n", sonuc+1);
     } else {
-        printf("Aranan eleman dizide bulunamadı.\n");
+        printf("Aranan eleman dizide bulunamadi.\n");
     }
 
     return 0;
